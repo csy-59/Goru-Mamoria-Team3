@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Item
+  - Enemy
+  - EndPoint
+  - Attack
   layers:
   - Default
   - TransparentFX
@@ -13,25 +16,25 @@ TagManager:
   - Water
   - UI
   - Player
-  - Item
-  - Unicon
-  - Rabbit
+  - NPC
+  - Platform
+  - EndPoint
   - Cloud
   - CloudSpot
-  - Background
-  - Door
+  - Magic
+  - Enemy
+  - 
+  - Doll
+  - UnicornHorns
+  - Candle
+  - Medicine
   - 
   - 
   - 
   - 
   - 
   - 
-  - Layer 1
-  - Layer 2
-  - Layer 3
-  - 
-  - 
-  - 
+  - PlayerDamaged
   - 
   - 
   - 

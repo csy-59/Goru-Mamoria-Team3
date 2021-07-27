@@ -19,10 +19,10 @@ public class PlayerMove : MonoBehaviour
     int currentHp;
 
     //아이템 관련
-    public int Doll = 0;            //layer 10
-    public int unicornHorns = 0;    //layer 11
-    public int candle = 0;          //layer 12
-    public int medicine = 0;        //layer 13
+    public int Doll = 0;            //layer 15
+    public int unicornHorns = 0;    //layer 16
+    public int candle = 0;          //layer 17
+    public int medicine = 0;        //layer 18
 
     //적 교전 관련
     public float invincibilityTime = 2;
@@ -69,6 +69,7 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
+        /*
         //컨트롤에 의한 이동
         float h = Input.GetAxisRaw("Horizontal");
         rigid.AddForce(Vector2.right * h, ForceMode2D.Impulse);
@@ -78,6 +79,9 @@ public class PlayerMove : MonoBehaviour
             rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
         else if (rigid.velocity.x < maxSpeed * (-1))    //오른쪽
             rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
+        */
+        float h = Input.GetAxisRaw("Horizontal");
+        rigid.velocity = new Vector2(h * maxSpeed, rigid.velocity.y);
 
         //###레이케스트 확인
         //밟은 플렛폼 확인
@@ -107,10 +111,10 @@ public class PlayerMove : MonoBehaviour
             collisionedObject.SetActive(false);
             switch (collisionedObject.layer)
             {
-                case 10: Doll++; print("Doll"); break;
-                case 11: unicornHorns++; print("Unicorn Horns");  break;
-                case 12: candle++; print("candle"); break;
-                case 13: medicine++; print("medicine"); break;
+                case 15: Doll++; print("Doll"); break;
+                case 16: unicornHorns++; print("Unicorn Horns");  break;
+                case 17: candle++; print("candle"); break;
+                case 18: medicine++; print("medicine"); break;
             }
         }
     }
