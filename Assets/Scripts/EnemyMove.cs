@@ -5,14 +5,16 @@ using UnityEngine;
 public class EnemyMove : MonoBehaviour
 {
     Rigidbody2D rigid;
+    
+    //이동 관련
     public float speed;
     float currentSpeed;
+    SpriteRenderer sp;
+
+    //공격 관련
     public int damage;
-    public float damageCool;
-    public float findDistance;
     PlayerMove player;
 
-    SpriteRenderer sp;
 
     void Start()
     {

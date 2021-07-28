@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 //만약 떨어지는 속도가 마음에 들지 않으시다면 rigid 부분에서 gravity~ 수를 조정해 주세요
@@ -27,11 +28,17 @@ public class PlayerMove : MonoBehaviour
     //적 교전 관련
     public float invincibilityTime = 2;
 
+    //NPC 인터랙션 관련
+    NPCInteraction npc;
+    public Text interText; 
+
     // Start is called before the first frame update
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        npc = GetComponent<NPCInteraction>();
+        interText.color = new Color(1, 1, 1, 0f);
 
         currentHp = maxHp;
     }
@@ -69,17 +76,8 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        /*
+        
         //컨트롤에 의한 이동
-        float h = Input.GetAxisRaw("Horizontal");
-        rigid.AddForce(Vector2.right * h, ForceMode2D.Impulse);
-
-        //가속도 조절을 위한 칸
-        if (rigid.velocity.x > maxSpeed)    //왼쪽
-            rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
-        else if (rigid.velocity.x < maxSpeed * (-1))    //오른쪽
-            rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
-        */
         float h = Input.GetAxisRaw("Horizontal");
         rigid.velocity = new Vector2(h * maxSpeed, rigid.velocity.y);
 
@@ -97,6 +95,23 @@ public class PlayerMove : MonoBehaviour
                     jumpCount = 0;
                     print("Down Hit: " + rayHitDown.collider.name);
                 }
+            }
+        }
+
+        //앞에 있는 오브젝트 확인
+        Debug.DrawLine(transform.position, new Vector3(1, 0, 0), new Color(1, 0, 0));
+        RaycastHit2D rayHitNPC = Physics2D.Raycast(rigid.position, new Vector3(1, 0, 0), 1, LayerMask.GetMask("NPC"));
+        bool isText = false;
+
+        if(rayHitNPC.collider != null)
+        {
+            print("NPC");
+            interText.color = isText ? new Color(1, 1, 1, 0) : new Color(1, 1, 1, 1);
+            bool dailog = false;
+            if (Input.GetButton("Submit"))
+            {
+                dailog = true;
+                isText = true;
             }
         }
     }
@@ -141,5 +156,19 @@ public class PlayerMove : MonoBehaviour
     {
         gameObject.layer = 6;
         sr.color = new Color(1, 1, 1, 1);
+    }
+
+    void startFade()
+    {
+        StartCoroutine(FadeTextToZero());
+    }
+    public IEnumerator FadeTextToZero()
+    {
+        interText.color = new Color(interText.color.r, interText.color.g, interText.color.b, 1);
+        while (interText.color.a > 0.0f)
+        {
+            interText.color = new Color(interText.color.r, interText.color.g, interText.color.b, interText.color.a - (Time.deltaTime / 1));
+            yield return null;
+        }
     }
 }
