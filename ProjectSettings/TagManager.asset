@@ -8,8 +8,6 @@ TagManager:
   - Enemy
   - EndPoint
   - Attack
-  - Chest
-  - NPC
   layers:
   - Default
   - TransparentFX
@@ -25,7 +23,7 @@ TagManager:
   - CloudSpot
   - Magic
   - Enemy
-  - Chest
+  - 
   - Doll
   - UnicornHorns
   - Candle
