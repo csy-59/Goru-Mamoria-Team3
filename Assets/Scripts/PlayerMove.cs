@@ -38,7 +38,6 @@ public class PlayerMove : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         npc = GetComponent<NPCInteraction>();
-        interText.color = new Color(1, 1, 1, 1);
 
         currentHp = maxHp;
     }
@@ -97,25 +96,6 @@ public class PlayerMove : MonoBehaviour
                 }
             }
         }
-
-        //앞에 있는 오브젝트 확인
-        Debug.DrawLine(transform.position, new Vector3(1, 0, 0), new Color(1, 0, 0));
-        RaycastHit2D rayHitNPC = Physics2D.Raycast(rigid.position, Vector3.right, 1, LayerMask.GetMask("NPC"));
-        bool isText = false;
-
-        if(rayHitNPC.collider != null)
-        {
-            print("Front Hit : " + rayHitNPC.collider.name);
-            interText.color = isText ? new Color(1, 1, 1, 0) : new Color(1, 1, 1, 1);
-            bool dailog = false;
-            if (Input.GetButton("Submit"))
-            {
-                dailog = true;
-                isText = true;
-            }
-
-            Invoke("startFade", 1);
-        }
     }
 
     //아이템과 충돌 시
@@ -132,6 +112,16 @@ public class PlayerMove : MonoBehaviour
                 case 16: unicornHorns++; print("Unicorn Horns");  break;
                 case 17: candle++; print("candle"); break;
                 case 18: medicine++; print("medicine"); break;
+            }
+        }
+        else if(collisionedObject.CompareTag("NPC"))
+        {
+            switch (collisionedObject.layer)
+            {
+                case 20: 
+                    print(collisionedObject.name);
+                    collisionedObject.SetActive(false);
+                    break;
             }
         }
     }
@@ -173,4 +163,5 @@ public class PlayerMove : MonoBehaviour
             yield return null;
         }
     }
+    
 }

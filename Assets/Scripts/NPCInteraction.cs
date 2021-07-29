@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class NPCInteraction : MonoBehaviour
 {
-    public GameObject pressKeyText;
-    public Transform textPos;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +18,5 @@ public class NPCInteraction : MonoBehaviour
 
     public void PressKeyText()
     {
-        GameObject text = Instantiate(pressKeyText);
-        text.transform.position = textPos.position;
     }
 }
