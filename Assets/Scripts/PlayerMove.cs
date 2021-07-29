@@ -38,7 +38,7 @@ public class PlayerMove : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         npc = GetComponent<NPCInteraction>();
-        interText.color = new Color(1, 1, 1, 0f);
+        interText.color = new Color(1, 1, 1, 1);
 
         currentHp = maxHp;
     }
@@ -86,7 +86,7 @@ public class PlayerMove : MonoBehaviour
         if (rigid.velocity.y < 0)
         {
             Debug.DrawLine(transform.position, new Vector3(0, 1, 0), new Color(0, 1, 0));
-            RaycastHit2D rayHitDown = Physics2D.Raycast(rigid.position, Vector3.down, 1, LayerMask.GetMask("Platform")); //Layer 추가 바랍니다...!
+            RaycastHit2D rayHitDown = Physics2D.Raycast(rigid.position, Vector3.down, 1, LayerMask.GetMask("Platform")); 
 
             if (rayHitDown.collider != null)
             {
@@ -100,12 +100,12 @@ public class PlayerMove : MonoBehaviour
 
         //앞에 있는 오브젝트 확인
         Debug.DrawLine(transform.position, new Vector3(1, 0, 0), new Color(1, 0, 0));
-        RaycastHit2D rayHitNPC = Physics2D.Raycast(rigid.position, new Vector3(1, 0, 0), 1, LayerMask.GetMask("NPC"));
+        RaycastHit2D rayHitNPC = Physics2D.Raycast(rigid.position, Vector3.right, 1, LayerMask.GetMask("NPC"));
         bool isText = false;
 
         if(rayHitNPC.collider != null)
         {
-            print("NPC");
+            print("Front Hit : " + rayHitNPC.collider.name);
             interText.color = isText ? new Color(1, 1, 1, 0) : new Color(1, 1, 1, 1);
             bool dailog = false;
             if (Input.GetButton("Submit"))
@@ -113,6 +113,8 @@ public class PlayerMove : MonoBehaviour
                 dailog = true;
                 isText = true;
             }
+
+            Invoke("startFade", 1);
         }
     }
 
