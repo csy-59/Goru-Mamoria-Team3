@@ -11,6 +11,8 @@ public class PlayerMove : MonoBehaviour
     public float maxSpeed;
     SpriteRenderer sr;
 
+    GameManager manager;
+
     //점프 관련
     public float jumpPower = 10;
     public int maxJump = 1;
@@ -32,6 +34,10 @@ public class PlayerMove : MonoBehaviour
     NPCInteraction npc;
     public Text interText;
     bool textShowed = false;
+    GameObject npcScan;
+
+    //맵 밖으로 떨어질 경우 관련
+    Vector2 startingPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +45,8 @@ public class PlayerMove : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         npc = GetComponent<NPCInteraction>();
+        manager = GameObject.FindObjectOfType<GameManager>();
+        startingPoint = gameObject.transform.position;
 
         interText.color = new Color(interText.color.r, interText.color.g, interText.color.b, 0f);
 
@@ -48,6 +56,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(Input.GetButton("Horizontal"))
         {
             rigid.velocity = new Vector2(rigid.velocity.normalized.x * 0.5f, rigid.velocity.y);
@@ -67,20 +76,23 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
-        if (Input.GetButton("Jump") && jumpCount < maxJump)
+        if (Input.GetButton("Jump") && jumpCount < maxJump && !manager.isTextOn)
         {
-            print("Jump");
             rigid.velocity = new Vector2(rigid.velocity.x, jumpPower);
             jumpCount++;
         }
 
+        if(Input.GetKeyDown(KeyCode.LeftShift) && npcScan != null)
+        {
+            manager.NPCText(npcScan);
+        }
     }
 
     private void FixedUpdate()
     {
-        
+
         //컨트롤에 의한 이동
-        float h = Input.GetAxisRaw("Horizontal");
+        float h = manager.isTextOn ? 0 : Input.GetAxisRaw("Horizontal");
         rigid.velocity = new Vector2(h * maxSpeed, rigid.velocity.y);
 
         //###레이케스트 확인
@@ -95,9 +107,21 @@ public class PlayerMove : MonoBehaviour
                 if (rayHitDown.distance < 0.6)
                 {
                     jumpCount = 0;
-                    print("Down Hit: " + rayHitDown.collider.name);
                 }
             }
+        }
+
+        //NPC 확인
+        Debug.DrawLine(transform.position, new Vector3(1, 0, 0), new Color(0, 1, 0));
+        RaycastHit2D rayHitNPC = Physics2D.Raycast(rigid.position, Vector3.right, 1, LayerMask.GetMask("InterativeObject"));
+
+        if (rayHitNPC.collider != null)
+        {
+            npcScan = rayHitNPC.collider.gameObject;
+        }
+        else
+        {
+            npcScan = null;
         }
     }
 
@@ -135,6 +159,11 @@ public class PlayerMove : MonoBehaviour
                     break;
             }
         }
+        else if (collisionedObject.CompareTag("StageEndPoint"))
+        {
+            Attacked(1, collisionedObject.transform.position);
+            gameObject.transform.position = startingPoint;
+        }
     }
 
     public void Attacked(int damage, Vector2 targetPos)
@@ -145,7 +174,6 @@ public class PlayerMove : MonoBehaviour
         print(dirc);
         rigid.AddForce(new Vector2(dirc, 1), ForceMode2D.Impulse);
 
-        print("attacked");
         currentHp -= damage;
         if(currentHp < 0)
         {

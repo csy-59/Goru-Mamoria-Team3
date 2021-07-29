@@ -351,12 +351,15 @@
 "Assets/Scripts/Chest.cs"
 "Assets/Scripts/CloudMove.cs"
 "Assets/Scripts/EnemyMove.cs"
+"Assets/Scripts/GameManager.cs"
 "Assets/Scripts/InteractionText.cs"
+"Assets/Scripts/InteractiveCode.cs"
 "Assets/Scripts/Magic.cs"
 "Assets/Scripts/MainCamara.cs"
 "Assets/Scripts/NPCInteraction.cs"
 "Assets/Scripts/PlayerAttack.cs"
 "Assets/Scripts/PlayerMove.cs"
+"Assets/Scripts/TalkManager.cs"
 -langversion:8.0
 
 /deterministic
