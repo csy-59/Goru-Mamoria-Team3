@@ -30,7 +30,8 @@ public class PlayerMove : MonoBehaviour
 
     //NPC 인터랙션 관련
     NPCInteraction npc;
-    public Text interText; 
+    public Text interText;
+    bool textShowed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,8 @@ public class PlayerMove : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         npc = GetComponent<NPCInteraction>();
+
+        interText.color = new Color(interText.color.r, interText.color.g, interText.color.b, 0f);
 
         currentHp = maxHp;
     }
@@ -121,6 +124,14 @@ public class PlayerMove : MonoBehaviour
                 case 20: 
                     print(collisionedObject.name);
                     collisionedObject.SetActive(false);
+
+                    if (!textShowed)
+                    {
+                        textShowed = true;
+                        interText.color = new Color(interText.color.r, interText.color.g, interText.color.b, 1f);
+                        Invoke("startFade", 2);
+                    }
+
                     break;
             }
         }
