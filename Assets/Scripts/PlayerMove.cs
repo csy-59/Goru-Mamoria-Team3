@@ -76,12 +76,14 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
+        //점프관련
         if (Input.GetButton("Jump") && jumpCount < maxJump && !manager.isTextOn)
         {
             rigid.velocity = new Vector2(rigid.velocity.x, jumpPower);
             jumpCount++;
         }
 
+        //인터랙션관련
         if(Input.GetKeyDown(KeyCode.LeftShift) && npcScan != null)
         {
             manager.NPCText(npcScan);
@@ -132,6 +134,7 @@ public class PlayerMove : MonoBehaviour
 
         if (collisionedObject.CompareTag("Item"))
         {
+            //아이템을
             collisionedObject.SetActive(false);
             switch (collisionedObject.layer)
             {
