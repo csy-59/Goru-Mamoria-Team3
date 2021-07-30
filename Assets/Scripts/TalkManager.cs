@@ -26,11 +26,11 @@ public class TalkManager : MonoBehaviour
             "그게 문제가 아니지...",
             "초면에 정말 미안한데 혹시 내 뿔을 가져다 줄 수 있겠니...?",
         });
-        talkData.Add(100, new string[] { "상자이다.", "유니콘 뿔이 들어있다!" });
-        talkData.Add(101, new string[] { "상자이다.", "양초가 들어있다!" });
+        talkData.Add(100, new string[] { "상자이다.", "양초가 들어있다!" });
+        talkData.Add(101, new string[] { "상자이다.", "물약이 들어있다!" });
         talkData.Add(102, new string[] { "상자이다.", "물약이 들어있다!" });
         talkData.Add(103, new string[] { "상자이다.", "유니콘 뿔이 들어있다!" });
-        talkData.Add(104, new string[] { "상자이다.", "물약이 들어있다!" });
+        talkData.Add(104, new string[] { "상자이다.", "유니콘 뿔이 들어있다!" });
     }
 
     public string GetTalk(int id, int talkIndex)

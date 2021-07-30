@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
     public float maxSpeed;
     SpriteRenderer sr;
 
+    //gm
     GameManager manager;
 
     //점프 관련
@@ -20,12 +21,6 @@ public class PlayerMove : MonoBehaviour
 
     public int maxHp;
     int currentHp;
-
-    //아이템 관련
-    public int Doll = 0;            //layer 15
-    public int unicornHorns = 0;    //layer 16
-    public int candle = 0;          //layer 17
-    public int medicine = 0;        //layer 18
 
     //적 교전 관련
     public float invincibilityTime = 2;
@@ -84,7 +79,7 @@ public class PlayerMove : MonoBehaviour
         }
 
         //인터랙션관련
-        if(Input.GetKeyDown(KeyCode.LeftShift) && npcScan != null)
+        if(Input.GetKeyDown(KeyCode.E) && npcScan != null)
         {
             manager.NPCText(npcScan);
         }
@@ -138,10 +133,22 @@ public class PlayerMove : MonoBehaviour
             collisionedObject.SetActive(false);
             switch (collisionedObject.layer)
             {
-                case 15: Doll++; print("Doll"); break;
-                case 16: unicornHorns++; print("Unicorn Horns");  break;
-                case 17: candle++; print("candle"); break;
-                case 18: medicine++; print("medicine"); break;
+                case 15: 
+                    manager.Doll++; 
+                    print("Doll"); 
+                    break;
+                case 16: 
+                    manager.unicornHorns++; 
+                    print("Unicorn Horns");  
+                    break;
+                case 17: 
+                    manager.candle++; 
+                    print("candle"); 
+                    break;
+                case 18: 
+                    manager.medicine++; 
+                    print("medicine"); 
+                    break;
             }
         }
         else if(collisionedObject.CompareTag("NPC"))
