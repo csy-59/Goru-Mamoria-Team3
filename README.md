@@ -1,1 +1,0 @@
-# Guru-Memoria-Team3
