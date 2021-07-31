@@ -69,6 +69,8 @@
     <Compile Include="Assets\Scripts\EnemyMove.cs" />
     <Compile Include="Assets\Scripts\NPCInteraction.cs" />
     <Compile Include="Assets\Scripts\Magic.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\HowToPlayMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
