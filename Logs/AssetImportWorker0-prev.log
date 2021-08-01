@@ -15,11 +15,11 @@ C:/Users/gaori/OneDrive/바탕 화면/Goru-Memoria-Team3-main
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-50601
+49700
 Successfully changed project path to: C:/Users/gaori/OneDrive/바탕 화면/Goru-Memoria-Team3-main
 C:/Users/gaori/OneDrive/바탕 화면/Goru-Memoria-Team3-main
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 322.07 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 322.49 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.16f1 (5fa502fca597)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.16f1/Editor/Data/Resources/UnitySubsystems
@@ -35,91 +35,91 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.16f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.16f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56820
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56688
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005091 seconds.
+Registered in 0.003252 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 348.15 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 291.49 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.864 seconds
+- Completed reload, in  2.454 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2864ms)
-		BeginReloadAssembly (141ms)
+	ReloadAssembly (2455ms)
+		BeginReloadAssembly (148ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (1177ms)
-			LoadAssemblies (132ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (949ms)
+			LoadAssemblies (144ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (384ms)
+			SetupTypeCache (317ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (57ms)
-			SetupLoadedEditorAssemblies (634ms)
+			RebuildScriptCaches (56ms)
+			SetupLoadedEditorAssemblies (485ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (11ms)
+				InitializePlatformSupportModulesInManaged (10ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (348ms)
+				RefreshPlugins (292ms)
 				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (209ms)
-				ProcessInitializeOnLoadMethodAttributes (62ms)
+				ProcessInitializeOnLoadAttributes (136ms)
+				ProcessInitializeOnLoadMethodAttributes (45ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.019548 seconds.
+Registered in 0.011713 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\gaori\OneDrive\바탕 화면\Goru-Memoria-Team3-main\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\gaori\OneDrive\바탕 화면\Goru-Memoria-Team3-main\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 270.86 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 312.93 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.487 seconds
+- Completed reload, in  2.717 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2488ms)
-		BeginReloadAssembly (253ms)
+	ReloadAssembly (2718ms)
+		BeginReloadAssembly (288ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
+			DisableScriptedObjects (9ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (29ms)
-		EndReloadAssembly (2118ms)
-			LoadAssemblies (182ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (2329ms)
+			LoadAssemblies (199ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (626ms)
+			SetupTypeCache (716ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (95ms)
-			SetupLoadedEditorAssemblies (1054ms)
+			RebuildScriptCaches (111ms)
+			SetupLoadedEditorAssemblies (1099ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
+				InitializePlatformSupportModulesInManaged (9ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (271ms)
-				BeforeProcessingInitializeOnLoad (162ms)
-				ProcessInitializeOnLoadAttributes (561ms)
-				ProcessInitializeOnLoadMethodAttributes (36ms)
-				AfterProcessingInitializeOnLoad (17ms)
+				RefreshPlugins (313ms)
+				BeforeProcessingInitializeOnLoad (157ms)
+				ProcessInitializeOnLoadAttributes (580ms)
+				ProcessInitializeOnLoadMethodAttributes (28ms)
+				AfterProcessingInitializeOnLoad (11ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (14ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 1.82 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 2.37 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3707 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 149.7 MB.
 System memory in use after: 149.8 MB.
 
 Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 4164.
-Total: 5.561200 ms (FindLiveObjects: 0.250100 ms CreateObjectMapping: 0.136900 ms MarkObjects: 4.963000 ms  DeleteObjects: 0.209300 ms)
+Total: 3.654300 ms (FindLiveObjects: 0.218200 ms CreateObjectMapping: 0.102900 ms MarkObjects: 3.161500 ms  DeleteObjects: 0.170200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -133,329 +133,19 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Nature_pixel_art_assets/Prefabs
-  artifactKey: Guid(25b462d4c7ecad445843e353e2d90427) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Nature_pixel_art_assets/Prefabs using Guid(25b462d4c7ecad445843e353e2d90427) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79fdf06f9c5a6c291c98b8d5dabe3a6d') in 0.010878 seconds 
+  path: Assets/Lvl_1/Background/background-2.png
+  artifactKey: Guid(6c7ed5570102fea42900e66f6fdc6ea4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Lvl_1/Background/background-2.png using Guid(6c7ed5570102fea42900e66f6fdc6ea4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37cee1e1d46e3c6402c148fc9f97ec84') in 0.148609 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000560 seconds.
-  path: Assets/Nature_pixel_art_assets/textures
-  artifactKey: Guid(d91241baa713a0d4a812a1d5aee49972) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Nature_pixel_art_assets/textures using Guid(d91241baa713a0d4a812a1d5aee49972) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d5666472dd11687ee391a36f1fe0ab4') in 0.004906 seconds 
+  Time since last request: 1.118967 seconds.
+  path: Assets/Lvl_1/Ground/ground.png
+  artifactKey: Guid(7a297d9ca37d5e248875dbe704029b5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Lvl_1/Ground/ground.png using Guid(7a297d9ca37d5e248875dbe704029b5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3564d0041058669084e0ec51e80c4b27') in 0.061111 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 105.408324 seconds.
-  path: Assets/Sunnyland/artwork
-  artifactKey: Guid(2f17d1e6a207e4d8eb72bd03b1b645ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sunnyland/artwork using Guid(2f17d1e6a207e4d8eb72bd03b1b645ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81a74d76d4688b1d4a5c3a255f24721c') in 0.012371 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.685833 seconds.
-  path: Assets/Sunnyland/artwork/Environment
-  artifactKey: Guid(7174750bdca91466fa784bba50da49b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sunnyland/artwork/Environment using Guid(7174750bdca91466fa784bba50da49b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0206cb2bfe385659083c10b1a15be05') in 0.032439 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.323351 seconds.
-  path: Assets/Sunnyland/artwork/Environment/props
-  artifactKey: Guid(15e7312e0607f4e84aeacdc44a70744c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sunnyland/artwork/Environment/props using Guid(15e7312e0607f4e84aeacdc44a70744c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ef14071724558cefaa6476b5eb4eae9') in 0.004587 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.203923 seconds.
-  path: Assets/Sunnyland/artwork/Environment/tileset-sliced.png
-  artifactKey: Guid(261212b977f594d5dbc48631a5c1295c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sunnyland/artwork/Environment/tileset-sliced.png using Guid(261212b977f594d5dbc48631a5c1295c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5982f377c6a522d994f9c4377d1c2e92') in 1.184501 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.593397 seconds.
-  path: Assets/Sunnyland/artwork/Environment/tileset.png
-  artifactKey: Guid(3b66e1a27c9634fe9a4746c47eeda7cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sunnyland/artwork/Environment/tileset.png using Guid(3b66e1a27c9634fe9a4746c47eeda7cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2468d4abaf2f691c612a6db667ebbb3c') in 0.016527 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 14.564056 seconds.
-  path: Assets/Sunnyland/artwork/Environment/props/big-crate.png
-  artifactKey: Guid(3fc2bbd409bf34ab6af1637bab569da1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sunnyland/artwork/Environment/props/big-crate.png using Guid(3fc2bbd409bf34ab6af1637bab569da1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '848ef4b84cb1ade9baa2919d69c55970') in 0.030793 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.115157 seconds.
-  path: Assets/Sunnyland/artwork/Environment/props/bush.png
-  artifactKey: Guid(ecc204495234d40f091d828790c56287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sunnyland/artwork/Environment/props/bush.png using Guid(ecc204495234d40f091d828790c56287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '006ff9cea45db4438265b8b57bb232c9') in 0.019607 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 75.176493 seconds.
-  path: Assets/TextMesh Pro/Resources
-  artifactKey: Guid(243e06394e614e5d99fab26083b707fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TextMesh Pro/Resources using Guid(243e06394e614e5d99fab26083b707fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4305a6e5269f696f56eeda6f3c0730ab') in 0.003719 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.853438 seconds.
-  path: Assets/TextMesh Pro/Resources/Sprite Assets
-  artifactKey: Guid(512a49d95c0c4332bdd98131869c23c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TextMesh Pro/Resources/Sprite Assets using Guid(512a49d95c0c4332bdd98131869c23c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5473180e3799e0261cd9a09c58cdbc1') in 0.005200 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 15.329703 seconds.
-  path: Assets/Gothicvania-Town/Scenes
-  artifactKey: Guid(197b58ce91083473d8824a72468d3c87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Scenes using Guid(197b58ce91083473d8824a72468d3c87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fea512efdedccc26c2a513c59e9c550a') in 0.004035 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 33.122985 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground-b.png
-  artifactKey: Guid(c1a385a8c5e9341289e2da2aee5323e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground-b.png using Guid(c1a385a8c5e9341289e2da2aee5323e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8e06c34967eee81d51bf5613af4c2cc') in 0.020360 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.451841 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground-shadow.png
-  artifactKey: Guid(cfbbc8ea170d049b4af2fe5fc2088c48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground-shadow.png using Guid(cfbbc8ea170d049b4af2fe5fc2088c48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4612eace33b5909308d79dcd9f1aa5a3') in 0.027672 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 41.305722 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground-right-corner.asset
-  artifactKey: Guid(431b21d9ac4a0f34ab5b241ba67a5236) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground-right-corner.asset using Guid(431b21d9ac4a0f34ab5b241ba67a5236) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ee9d8e5da0a50afdb84b9ad0a8d8d70') in 0.029867 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.847682 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground-b.asset
-  artifactKey: Guid(6729d7ec8e0623a4b8b813ed9724ff09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground-b.asset using Guid(6729d7ec8e0623a4b8b813ed9724ff09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee1c6d511e96abcef1b4c7f1acd3ea34') in 0.009218 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.972658 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground-corner.asset
-  artifactKey: Guid(4b5b973d0f4a83f439a82039fa06d533) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground-corner.asset using Guid(4b5b973d0f4a83f439a82039fa06d533) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40dc4902cbfd6da0b849aab0222ff123') in 0.012041 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.275611 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground-shadow.asset
-  artifactKey: Guid(043d75006515c0d49bdf7fde8c6351b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground-shadow.asset using Guid(043d75006515c0d49bdf7fde8c6351b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f88e2e02a31d89022e68c6a71a0cbc1c') in 0.009757 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.300374 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground-wall-b.asset
-  artifactKey: Guid(6e8eca8fa90c6e644b3e428e3ee3a712) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground-wall-b.asset using Guid(6e8eca8fa90c6e644b3e428e3ee3a712) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b303065c58815389b7d2378bfc11f1a5') in 0.010142 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.781499 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground-wall.asset
-  artifactKey: Guid(568fb154220b8ff43997710b14348003) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground-wall.asset using Guid(568fb154220b8ff43997710b14348003) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbe730133669dd2aa8d92763294e57de') in 0.009341 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.799346 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground-wood-legs.asset
-  artifactKey: Guid(4a825b75fd05123498d7a66f4e851d3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground-wood-legs.asset using Guid(4a825b75fd05123498d7a66f4e851d3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8dc9ba15f6fb3165496e7ce9e3832d14') in 0.007956 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.554928 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground.png
-  artifactKey: Guid(4aa0a50e546194c289de175afdd9e097) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground.png using Guid(4aa0a50e546194c289de175afdd9e097) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2118a761a8d25932309b2bd5d1a95d1') in 0.019637 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.100579 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground-wood-legs.png
-  artifactKey: Guid(a9bd55e4cd24a469793a6b3c35ec8e6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground-wood-legs.png using Guid(a9bd55e4cd24a469793a6b3c35ec8e6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d5821cb64fd1841b7542edf403831ae') in 0.019963 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.367281 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground.asset
-  artifactKey: Guid(b26868e01f148ab4eb76a30ff1b71432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/ground.asset using Guid(b26868e01f148ab4eb76a30ff1b71432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66cd5e5b3032451ea71a51fb7f5984e7') in 0.009002 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.602429 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/left-corner.asset
-  artifactKey: Guid(a0423df3e9c637244922bf8f384695d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/left-corner.asset using Guid(a0423df3e9c637244922bf8f384695d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21bd814ab80252c0ecad621d720ae4c3') in 0.008863 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.152494 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/left-roof.asset
-  artifactKey: Guid(a91e078d99016de47a253eefd497bbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/left-roof.asset using Guid(a91e078d99016de47a253eefd497bbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f67371981a51bfeff8f2a908c3b544c3') in 0.009211 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.788594 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/left-slope.png
-  artifactKey: Guid(228689837deea4e14959af26c5733d51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/left-slope.png using Guid(228689837deea4e14959af26c5733d51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c24ae201eb348c699586322afc9bb55') in 0.021978 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.514728 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/left-slope.asset
-  artifactKey: Guid(3adb2482e68596540a2bce6287aa2de8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/left-slope.asset using Guid(3adb2482e68596540a2bce6287aa2de8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c057094f858d0e7f9409248c9f22f0c') in 0.008306 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.188406 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/right-corner.asset
-  artifactKey: Guid(18b6fc8996d390349b30e30b40dfe603) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/right-corner.asset using Guid(18b6fc8996d390349b30e30b40dfe603) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '915ec80b41ed18084f85bb4966f3ca36') in 0.011174 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.004135 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/right-roof.png
-  artifactKey: Guid(8fda6f3fa68a04d50868eac837501e62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/right-roof.png using Guid(8fda6f3fa68a04d50868eac837501e62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20e92c0cdc86618a5c1ecd030fa7295c') in 0.015193 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.382506 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/right-roof.asset
-  artifactKey: Guid(c0e3fcee43a95364ba2503050216e419) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/right-roof.asset using Guid(c0e3fcee43a95364ba2503050216e419) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49a828c49fb068cfedd28b6e906b4ee6') in 0.011318 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.560916 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/right-slope.asset
-  artifactKey: Guid(c3dac74dac0c25c42935a6f5e2e10668) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/right-slope.asset using Guid(c3dac74dac0c25c42935a6f5e2e10668) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ab79be142f46bb4d42cb3cb41b610dd') in 0.009381 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.166184 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/roof.asset
-  artifactKey: Guid(e9a0ea7ba9506914794ded2de8c4622e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/roof.asset using Guid(e9a0ea7ba9506914794ded2de8c4622e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f56df01d73aa7e4702f9c8141373057f') in 0.009853 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.173103 seconds.
-  path: Assets/Gothicvania-Town/Art/Environment/sliced-tileset/shadow.asset
-  artifactKey: Guid(16c20dd46e446034b822d3d2b8a36788) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gothicvania-Town/Art/Environment/sliced-tileset/shadow.asset using Guid(16c20dd46e446034b822d3d2b8a36788) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3604fb3236722fe138c7e584f386388') in 0.008813 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 179.703558 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Material
-  artifactKey: Guid(0379c5940f27a7049b6c9e8a3c23041e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Material using Guid(0379c5940f27a7049b6c9e8a3c23041e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b8059e1f560b9df59e3f6f765103b66') in 0.002932 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.256644 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Animation
-  artifactKey: Guid(c89e3d2b43fc205448e78ae1dcd61d9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Animation using Guid(c89e3d2b43fc205448e78ae1dcd61d9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85eb2239ce4114b560944d72ca70907f') in 0.003736 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.012767 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\gaori\OneDrive\바탕 화면\Goru-Memoria-Team3-main\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\gaori\OneDrive\바탕 화면\Goru-Memoria-Team3-main\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.54 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.441 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2442ms)
-		BeginReloadAssembly (391ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (39ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (172ms)
-		EndReloadAssembly (1944ms)
-			LoadAssemblies (184ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (742ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (101ms)
-			SetupLoadedEditorAssemblies (702ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (3ms)
-				BeforeProcessingInitializeOnLoad (142ms)
-				ProcessInitializeOnLoadAttributes (516ms)
-				ProcessInitializeOnLoadMethodAttributes (18ms)
-				AfterProcessingInitializeOnLoad (13ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (36ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 3.03 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3687 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 156.5 MB.
-System memory in use after: 156.6 MB.
-
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 4332.
-Total: 7.158700 ms (FindLiveObjects: 0.497500 ms CreateObjectMapping: 0.324800 ms MarkObjects: 6.128800 ms  DeleteObjects: 0.205900 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 6622.573131 seconds.
-  path: Assets/Nature_pixel_art_assets/Nature_tiles_01
-  artifactKey: Guid(512f2476fe9ae9442a9bcd5357b467f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01 using Guid(512f2476fe9ae9442a9bcd5357b467f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d392003f599e40fe47c23ef675b88e2') in 0.010062 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.893517 seconds.
-  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_0.asset
-  artifactKey: Guid(ec21ed33cdc49584cbfdc700b4a6a509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_0.asset using Guid(ec21ed33cdc49584cbfdc700b4a6a509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd88b5c13d51951fc5590e04a1eb71ee7') in 0.046298 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 21.122795 seconds.
-  path: Assets/Lvl_1/Background
-  artifactKey: Guid(643a2a0719434ba469e3478e8c6ef26d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Lvl_1/Background using Guid(643a2a0719434ba469e3478e8c6ef26d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bc1f6a6e778575dd1a75c687bd81924') in 0.003036 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.637575 seconds.
-  path: Assets/Lvl_1/Background/background.png
-  artifactKey: Guid(315cb58869908024fbfa6fb33734140c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Lvl_1/Background/background.png using Guid(315cb58869908024fbfa6fb33734140c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afc38fad806c37529416479a9448bd19') in 0.062406 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 94.147600 seconds.
-  path: Assets/Lvl_1/Background/background_0.asset
-  artifactKey: Guid(1a5d7f7c5511d09469bcd2db005dfb0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Lvl_1/Background/background_0.asset using Guid(1a5d7f7c5511d09469bcd2db005dfb0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28d078d4b7459e7acd7fec3d776ffa15') in 0.011707 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.859229 seconds.
-  path: Assets/Lvl_1/Background/background_8.asset
-  artifactKey: Guid(620530313a6f3e64ab42efe6aa218b5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Lvl_1/Background/background_8.asset using Guid(620530313a6f3e64ab42efe6aa218b5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eeb4f0997e197ab64838c497adb3809e') in 0.009487 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 16.353390 seconds.
-  path: Assets/Lvl_1/Background/background.png
-  artifactKey: Guid(315cb58869908024fbfa6fb33734140c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Lvl_1/Background/background.png using Guid(315cb58869908024fbfa6fb33734140c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb0bd3015a96393c95ca1546fba2876d') in 0.041226 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 216.047890 seconds.
-  path: Assets/Lvl_1/Background/background.png
-  artifactKey: Guid(315cb58869908024fbfa6fb33734140c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Lvl_1/Background/background.png using Guid(315cb58869908024fbfa6fb33734140c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea4b9a6c2d7942a325e9e23f476209f5') in 1.501670 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 686.038447 seconds.
-  path: Assets/Lvl_1/Background/background.png
-  artifactKey: Guid(315cb58869908024fbfa6fb33734140c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Lvl_1/Background/background.png using Guid(315cb58869908024fbfa6fb33734140c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8be9572d70b66128f4473685d3ef885') in 1.909310 seconds 
+  Time since last request: 74.413048 seconds.
+  path: Assets/Lvl_1/Ground/ground.png
+  artifactKey: Guid(7a297d9ca37d5e248875dbe704029b5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Lvl_1/Ground/ground.png using Guid(7a297d9ca37d5e248875dbe704029b5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd69bdc11e07f1e3dd4d45a0e19d9cd5a') in 0.057651 seconds 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

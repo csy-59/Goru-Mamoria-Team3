@@ -30,7 +30,10 @@ public class PlayerMove : MonoBehaviour
 
     //NPC 인터랙션 관련
     NPCInteraction npc;
-    public Text interText; 
+    public Text interText;
+
+    //시작 포인트 저장
+    Vector2 startingPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +41,8 @@ public class PlayerMove : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         npc = GetComponent<NPCInteraction>();
+        startingPoint = gameObject.transform.position;
+
         interText.color = new Color(1, 1, 1, 1);
 
         currentHp = maxHp;
@@ -133,6 +138,11 @@ public class PlayerMove : MonoBehaviour
                 case 17: candle++; print("candle"); break;
                 case 18: medicine++; print("medicine"); break;
             }
+        }
+        else if (collisionedObject.CompareTag("StageEndPoint"))
+        {
+            Attacked(1, collisionedObject.transform.position);
+            gameObject.transform.position = startingPoint;
         }
     }
 

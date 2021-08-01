@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - EndPoint
   - Attack
+  - NPC
+  - StageEndPoint
   layers:
   - Default
   - TransparentFX
