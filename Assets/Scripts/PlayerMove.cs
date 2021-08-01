@@ -30,12 +30,7 @@ public class PlayerMove : MonoBehaviour
 
     //NPC 인터랙션 관련
     NPCInteraction npc;
-    public Text interText;
-    bool textShowed = false;
-    GameObject npcScan;
-
-    //시작포인트 설정
-    Vector2 startPoint;
+    public Text interText; 
 
     // Start is called before the first frame update
     void Start()
@@ -43,8 +38,7 @@ public class PlayerMove : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         npc = GetComponent<NPCInteraction>();
-        startPoint = gameObject.transform.position;
-        //interText.color = new Color(interText.color.r, interText.color.g, interText.color.b, 0f);
+        interText.color = new Color(1, 1, 1, 1);
 
         currentHp = maxHp;
     }
@@ -106,11 +100,21 @@ public class PlayerMove : MonoBehaviour
 
         //앞에 있는 오브젝트 확인
         Debug.DrawLine(transform.position, new Vector3(1, 0, 0), new Color(1, 0, 0));
-        RaycastHit2D rayHitNPC = Physics2D.Raycast(rigid.position, Vector3.right, 1, LayerMask.GetMask("InteractiveObject"));
+        RaycastHit2D rayHitNPC = Physics2D.Raycast(rigid.position, Vector3.right, 1, LayerMask.GetMask("NPC"));
+        bool isText = false;
 
         if(rayHitNPC.collider != null)
         {
-            //print("Front Hit : " + rayHitNPC.collider.name);
+            print("Front Hit : " + rayHitNPC.collider.name);
+            interText.color = isText ? new Color(1, 1, 1, 0) : new Color(1, 1, 1, 1);
+            bool dailog = false;
+            if (Input.GetButton("Submit"))
+            {
+                dailog = true;
+                isText = true;
+            }
+
+            Invoke("startFade", 1);
         }
     }
 
@@ -118,7 +122,6 @@ public class PlayerMove : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject collisionedObject = collision.gameObject;
-        print(collisionedObject.tag);
 
         if (collisionedObject.CompareTag("Item"))
         {
@@ -126,27 +129,10 @@ public class PlayerMove : MonoBehaviour
             switch (collisionedObject.layer)
             {
                 case 15: Doll++; print("Doll"); break;
-                case 16: unicornHorns++; print("Unicorn Horns"); break;
+                case 16: unicornHorns++; print("Unicorn Horns");  break;
                 case 17: candle++; print("candle"); break;
                 case 18: medicine++; print("medicine"); break;
             }
-        }
-        else if (collisionedObject.CompareTag("NPC"))
-        {
-            print(collisionedObject.name);
-            collisionedObject.SetActive(false);
-
-            if (!textShowed)
-            {
-                textShowed = true;
-                interText.color = new Color(interText.color.r, interText.color.g, interText.color.b, 1f);
-                Invoke("startFade", 2);
-            }
-        }
-        else if (collisionedObject.CompareTag("StageEndPoint"))
-        {
-            Attacked(1, transform.position);
-            gameObject.transform.position = startPoint;
         }
     }
 
