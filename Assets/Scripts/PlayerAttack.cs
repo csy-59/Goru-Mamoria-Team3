@@ -9,7 +9,6 @@ public class PlayerAttack : MonoBehaviour
     public Transform pos;
     public float shootSpeed;
     float curTime;
-    public MainMenu isGameOn;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +20,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if(curTime <= 0)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0) && isGameOn.isGameStart)
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 Instantiate(Magic, pos.position, transform.rotation);
             }

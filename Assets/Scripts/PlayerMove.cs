@@ -11,9 +11,6 @@ public class PlayerMove : MonoBehaviour
     public float maxSpeed;
     SpriteRenderer sr;
 
-    //gm
-    GameManager manager;
-
     //점프 관련
     public float jumpPower = 10;
     public int maxJump = 1;
@@ -22,17 +19,18 @@ public class PlayerMove : MonoBehaviour
     public int maxHp;
     int currentHp;
 
+    //아이템 관련
+    public int Doll = 0;            //layer 15
+    public int unicornHorns = 0;    //layer 16
+    public int candle = 0;          //layer 17
+    public int medicine = 0;        //layer 18
+
     //적 교전 관련
     public float invincibilityTime = 2;
 
     //NPC 인터랙션 관련
     NPCInteraction npc;
-    public Text interText;
-    bool textShowed = false;
-    GameObject npcScan;
-
-    //맵 밖으로 떨어질 경우 관련
-    Vector2 startingPoint;
+    public Text interText; 
 
     // Start is called before the first frame update
     void Start()
@@ -40,10 +38,7 @@ public class PlayerMove : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         npc = GetComponent<NPCInteraction>();
-        manager = GameObject.FindObjectOfType<GameManager>();
-        startingPoint = gameObject.transform.position;
-
-        interText.color = new Color(interText.color.r, interText.color.g, interText.color.b, 0f);
+        interText.color = new Color(1, 1, 1, 1);
 
         currentHp = maxHp;
     }
@@ -51,7 +46,6 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if(Input.GetButton("Horizontal"))
         {
             rigid.velocity = new Vector2(rigid.velocity.normalized.x * 0.5f, rigid.velocity.y);
@@ -71,25 +65,20 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
-        //점프관련
-        if (Input.GetButton("Jump") && jumpCount < maxJump && !manager.isTextOn)
+        if (Input.GetButton("Jump") && jumpCount < maxJump)
         {
+            print("Jump");
             rigid.velocity = new Vector2(rigid.velocity.x, jumpPower);
             jumpCount++;
         }
 
-        //인터랙션관련
-        if(Input.GetKeyDown(KeyCode.E) && npcScan != null)
-        {
-            manager.NPCText(npcScan);
-        }
     }
 
     private void FixedUpdate()
     {
-
+        
         //컨트롤에 의한 이동
-        float h = manager.isTextOn ? 0 : Input.GetAxisRaw("Horizontal");
+        float h = Input.GetAxisRaw("Horizontal");
         rigid.velocity = new Vector2(h * maxSpeed, rigid.velocity.y);
 
         //###레이케스트 확인
@@ -104,21 +93,28 @@ public class PlayerMove : MonoBehaviour
                 if (rayHitDown.distance < 0.6)
                 {
                     jumpCount = 0;
+                    print("Down Hit: " + rayHitDown.collider.name);
                 }
             }
         }
 
-        //NPC 확인
-        Debug.DrawLine(transform.position, new Vector3(1, 0, 0), new Color(0, 1, 0));
-        RaycastHit2D rayHitNPC = Physics2D.Raycast(rigid.position, Vector3.right, 1, LayerMask.GetMask("InterativeObject"));
+        //앞에 있는 오브젝트 확인
+        Debug.DrawLine(transform.position, new Vector3(1, 0, 0), new Color(1, 0, 0));
+        RaycastHit2D rayHitNPC = Physics2D.Raycast(rigid.position, Vector3.right, 1, LayerMask.GetMask("NPC"));
+        bool isText = false;
 
-        if (rayHitNPC.collider != null)
+        if(rayHitNPC.collider != null)
         {
-            npcScan = rayHitNPC.collider.gameObject;
-        }
-        else
-        {
-            npcScan = null;
+            print("Front Hit : " + rayHitNPC.collider.name);
+            interText.color = isText ? new Color(1, 1, 1, 0) : new Color(1, 1, 1, 1);
+            bool dailog = false;
+            if (Input.GetButton("Submit"))
+            {
+                dailog = true;
+                isText = true;
+            }
+
+            Invoke("startFade", 1);
         }
     }
 
@@ -129,50 +125,14 @@ public class PlayerMove : MonoBehaviour
 
         if (collisionedObject.CompareTag("Item"))
         {
-            //아이템을
             collisionedObject.SetActive(false);
             switch (collisionedObject.layer)
             {
-                case 15: 
-                    manager.Doll++; 
-                    print("Doll"); 
-                    break;
-                case 16: 
-                    manager.unicornHorns++; 
-                    print("Unicorn Horns");  
-                    break;
-                case 17: 
-                    manager.candle++; 
-                    print("candle"); 
-                    break;
-                case 18: 
-                    manager.medicine++; 
-                    print("medicine"); 
-                    break;
+                case 15: Doll++; print("Doll"); break;
+                case 16: unicornHorns++; print("Unicorn Horns");  break;
+                case 17: candle++; print("candle"); break;
+                case 18: medicine++; print("medicine"); break;
             }
-        }
-        else if(collisionedObject.CompareTag("NPC"))
-        {
-            switch (collisionedObject.layer)
-            {
-                case 20: 
-                    print(collisionedObject.name);
-                    collisionedObject.SetActive(false);
-
-                    if (!textShowed)
-                    {
-                        textShowed = true;
-                        interText.color = new Color(interText.color.r, interText.color.g, interText.color.b, 1f);
-                        Invoke("startFade", 2);
-                    }
-
-                    break;
-            }
-        }
-        else if (collisionedObject.CompareTag("StageEndPoint"))
-        {
-            Attacked(1, collisionedObject.transform.position);
-            gameObject.transform.position = startingPoint;
         }
     }
 
@@ -184,6 +144,7 @@ public class PlayerMove : MonoBehaviour
         print(dirc);
         rigid.AddForce(new Vector2(dirc, 1), ForceMode2D.Impulse);
 
+        print("attacked");
         currentHp -= damage;
         if(currentHp < 0)
         {
@@ -212,5 +173,4 @@ public class PlayerMove : MonoBehaviour
             yield return null;
         }
     }
-    
 }
