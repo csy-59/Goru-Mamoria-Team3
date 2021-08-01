@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - EndPoint
   - Attack
+  - NPC
+  - StageEndPoint
   layers:
   - Default
   - TransparentFX
@@ -23,13 +25,13 @@ TagManager:
   - CloudSpot
   - Magic
   - Enemy
-  - 
+  - InteractiveObject
   - Doll
   - UnicornHorns
   - Candle
   - Medicine
   - 
-  - 
+  - TextPoint
   - 
   - 
   - 
