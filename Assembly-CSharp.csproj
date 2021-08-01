@@ -102,7 +102,6 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\Free Pixel Art Hills\readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
-    <None Include="Assets\Nature_pixel_art_assets\pixel_snapping_README.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
