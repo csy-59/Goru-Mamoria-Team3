@@ -112,10 +112,8 @@ public class PlayerMove : MonoBehaviour
         {
             print("Front Hit : " + rayHitNPC.collider.name);
             interText.color = isText ? new Color(1, 1, 1, 0) : new Color(1, 1, 1, 1);
-            bool dailog = false;
             if (Input.GetButton("Submit"))
             {
-                dailog = true;
                 isText = true;
             }
 
