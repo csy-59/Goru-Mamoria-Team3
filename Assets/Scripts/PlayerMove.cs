@@ -34,6 +34,8 @@ public class PlayerMove : MonoBehaviour
     //시작 포인트 저장
     public Vector2[] startingPoint;
 
+    //사운드 플레이어
+    AudioSource audioSrc_jump;
 
     // Start is called before the first frame update
     void Start()
@@ -76,6 +78,8 @@ public class PlayerMove : MonoBehaviour
             print("Jump");
             rigid.velocity = new Vector2(rigid.velocity.x, jumpPower);
             jumpCount++;
+
+            audioSrc_jump.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.E) && npcScan != null)
