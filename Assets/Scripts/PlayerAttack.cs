@@ -10,12 +10,9 @@ public class PlayerAttack : MonoBehaviour
     public float shootSpeed;
     float curTime;
 
-    MainMenu mm;
-
     // Start is called before the first frame update
     void Start()
     {
-        mm = GameObject.FindObjectOfType<MainMenu>();
     }
 
     // Update is called once per frame
@@ -23,7 +20,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if(curTime <= 0)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0) && mm.isGameStart)
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 Instantiate(Magic, pos.position, transform.rotation);
             }
