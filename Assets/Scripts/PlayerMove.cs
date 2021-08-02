@@ -11,19 +11,16 @@ public class PlayerMove : MonoBehaviour
     public float maxSpeed;
     SpriteRenderer sr;
 
+    //gm
+    GameManager manager;
+
     //점프 관련
     public float jumpPower = 10;
     public int maxJump = 1;
     int jumpCount = 0;
 
     public int maxHp;
-    int currentHp;
-
-    //아이템 관련
-    public int Doll = 0;            //layer 15
-    public int unicornHorns = 0;    //layer 16
-    public int candle = 0;          //layer 17
-    public int medicine = 0;        //layer 18
+    public int currentHp;
 
     //적 교전 관련
     public float invincibilityTime = 2;
@@ -31,9 +28,12 @@ public class PlayerMove : MonoBehaviour
     //NPC 인터랙션 관련
     NPCInteraction npc;
     public Text interText;
+    bool textShowed = false;
+    GameObject npcScan;
 
     //시작 포인트 저장
-    Vector2 startingPoint;
+    public Vector2[] startingPoint;
+
 
     // Start is called before the first frame update
     void Start()
@@ -41,9 +41,10 @@ public class PlayerMove : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         npc = GetComponent<NPCInteraction>();
-        startingPoint = gameObject.transform.position;
+        manager = GameObject.FindObjectOfType<GameManager>();
+        startingPoint[0] = gameObject.transform.position;
 
-        interText.color = new Color(1, 1, 1, 1);
+        interText.color = new Color(interText.color.r, interText.color.g, interText.color.b, 0f);
 
         currentHp = maxHp;
     }
@@ -77,6 +78,10 @@ public class PlayerMove : MonoBehaviour
             jumpCount++;
         }
 
+        if (Input.GetKeyDown(KeyCode.E) && npcScan != null)
+        {
+            manager.NPCText(npcScan);
+        }
     }
 
     private void FixedUpdate()
@@ -91,11 +96,11 @@ public class PlayerMove : MonoBehaviour
         if (rigid.velocity.y < 0)
         {
             Debug.DrawLine(transform.position, new Vector3(0, 1, 0), new Color(0, 1, 0));
-            RaycastHit2D rayHitDown = Physics2D.Raycast(rigid.position, Vector3.down, 1, LayerMask.GetMask("Platform")); 
+            RaycastHit2D rayHitDown = Physics2D.Raycast(rigid.position, Vector3.down, 3, LayerMask.GetMask("Platform")); 
 
             if (rayHitDown.collider != null)
             {
-                if (rayHitDown.distance < 0.6)
+                if (rayHitDown.distance < 3)
                 {
                     jumpCount = 0;
                     print("Down Hit: " + rayHitDown.collider.name);
@@ -103,21 +108,32 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
-        //앞에 있는 오브젝트 확인
+        //NPC 확인
         Debug.DrawLine(transform.position, new Vector3(1, 0, 0), new Color(1, 0, 0));
-        RaycastHit2D rayHitNPC = Physics2D.Raycast(rigid.position, Vector3.right, 1, LayerMask.GetMask("NPC"));
-        bool isText = false;
+        RaycastHit2D rayHitNPC = Physics2D.Raycast(rigid.position, Vector3.right, 1, LayerMask.GetMask("InteractiveObject"));
 
-        if(rayHitNPC.collider != null)
+        if (rayHitNPC.collider != null)
         {
-            print("Front Hit : " + rayHitNPC.collider.name);
-            interText.color = isText ? new Color(1, 1, 1, 0) : new Color(1, 1, 1, 1);
-            if (Input.GetButton("Submit"))
-            {
-                isText = true;
-            }
+            print(rayHitNPC.collider.name);
+            npcScan = rayHitNPC.collider.gameObject;
+        }
+        else
+        {
+            npcScan = null;
+        }
 
-            Invoke("startFade", 1);
+        //스테이지 이동 확인
+        Debug.DrawLine(transform.position, new Vector3(1, 0, 0), new Color(1, 0, 0));
+        RaycastHit2D rayHitDoor = Physics2D.Raycast(rigid.position, Vector3.right, 1, LayerMask.GetMask("Door"));
+
+        if (rayHitNPC.collider != null)
+        {
+            print(rayHitNPC.collider.name);
+            npcScan = rayHitNPC.collider.gameObject;
+        }
+        else
+        {
+            npcScan = null;
         }
     }
 
@@ -131,16 +147,40 @@ public class PlayerMove : MonoBehaviour
             collisionedObject.SetActive(false);
             switch (collisionedObject.layer)
             {
-                case 15: Doll++; print("Doll"); break;
-                case 16: unicornHorns++; print("Unicorn Horns");  break;
-                case 17: candle++; print("candle"); break;
-                case 18: medicine++; print("medicine"); break;
+                case 15:
+                    manager.Doll++;
+                    print("Doll");
+                    break;
+                case 16:
+                    manager.unicornHorns++;
+                    print("Unicorn Horns");
+                    break;
+                case 17:
+                    manager.candle++;
+                    print("candle");
+                    break;
+                case 18:
+                    manager.medicine++;
+                    print("medicine");
+                    break;
+            }
+        }
+        else if (collisionedObject.CompareTag("NPC"))
+        {
+            print(collisionedObject.name);
+            collisionedObject.SetActive(false);
+
+            if (!textShowed)
+            {
+                textShowed = true;
+                interText.color = new Color(interText.color.r, interText.color.g, interText.color.b, 1f);
+                Invoke("startFade", 2);
             }
         }
         else if (collisionedObject.CompareTag("StageEndPoint"))
         {
             Attacked(1, collisionedObject.transform.position);
-            gameObject.transform.position = startingPoint;
+            gameObject.transform.position = startingPoint[manager.nowStage];
         }
     }
 

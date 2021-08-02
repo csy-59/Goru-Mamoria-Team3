@@ -59,6 +59,10 @@
     <Compile Include="Assets\Free Pixel Art Hills\Demo\MoveBackground.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\PropsAltar.cs" />
     <Compile Include="Assets\Scripts\BossEnemyMove.cs" />
+    <Compile Include="Assets\Scripts\Manager\TalkManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\Stage2BackGround.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\LayerTrigger.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\MainCamara.cs" />
@@ -67,10 +71,12 @@
     <Compile Include="Assets\Scripts\CloudMove.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\SpriteColorAnimation.cs" />
     <Compile Include="Assets\Scripts\EnemyMove.cs" />
+    <Compile Include="Assets\Scripts\DeathMenu.cs" />
+    <Compile Include="Assets\Scripts\InteractiveCode.cs" />
     <Compile Include="Assets\Scripts\NPCInteraction.cs" />
     <Compile Include="Assets\Scripts\Magic.cs" />
-    <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
-    <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\OnGameUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
